@@ -1,0 +1,150 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{wrapper}
+
+% ================= 版面設定 =================
+\RequirePackage[
+  a4paper,
+  top=2cm,
+  bottom=1.2cm,
+  left=2.7cm,
+  right=2.7cm
+]{geometry}
+
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+\RequirePackage{ctex}
+\RequirePackage{titlesec}
+\RequirePackage{graphicx}
+\RequirePackage{array}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{multirow}
+\RequirePackage{float}
+\RequirePackage[absolute,overlay]{textpos}
+
+
+% ================= 圖片與浮動控制 =================
+\usepackage{graphicx}     % 插圖
+\usepackage{float}        % [H] 強制位置
+\usepackage{subcaption}   % 子圖
+\usepackage{caption}      % 自訂 caption 樣式
+
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{booktabs} 
+\usepackage{ragged2e}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+
+\usepackage[hidelinks]{hyperref}
+
+
+\usepackage{pdfpages}
+
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[absolute,overlay]{textpos}
+
+
+
+% ================= 字體 =================
+\setmainfont{Times New Roman}
+\IfFontExistsTF{TW-Kai}
+  {\setCJKmainfont{TW-Kai}}
+  {\setCJKmainfont{Noto Serif CJK TC}}
+
+% ================= 完全移除頁碼（含章節頁 plain） =================
+\pagestyle{empty}
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+
+% ================= 章節格式 =================
+\setcounter{chapter}{1}
+
+\renewcommand{\thechapter}{\chinese{chapter}}
+\renewcommand{\thesection}{\chinese{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{(\arabic{subsubsection})}
+
+% Chapter（14pt）
+\titleformat{\chapter}[hang]
+  {\fontsize{14pt}{16pt}\bfseries}
+  {\thechapter、}
+  {1em}
+  {}
+\titlespacing*{\chapter}{0pt}{0pt}{1em}
+
+% Section（例如：(一)）
+\titleformat{\section}[hang]
+  {\fontsize{12pt}{14pt}\bfseries}
+  {(\thesection)}
+  {1em}
+  {}
+
+% Subsection（例如：1.）
+\titleformat{\subsection}[hang]
+  {\fontsize{12pt}{14pt}}
+  {\thesubsection.}
+  {1em}
+  {}
+
+% Subsubsection（例如：(1)）
+\titleformat{\subsubsection}[hang]
+  {\fontsize{12pt}{14pt}}
+  {\thesubsubsection}
+  {1em}
+  {}
+
+
+% ================= 圖表 =================
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+
+\makeatletter
+\renewcommand{\fnum@figure}{圖\thefigure}
+\renewcommand{\fnum@table}{表\thetable}
+\makeatother
+
+% ================= 左下角 C80X =================
+\newcommand{\formcode}[1]{%
+  \begin{textblock*}{3cm}(0.5cm,\dimexpr\paperheight-1.3cm\relax)
+    \fontsize{10pt}{12pt}\selectfont 表#1%
+  \end{textblock*}%
+}
+
+% ================= 參考文獻 =================
+
+\makeatletter
+\def\thebibliography#1{%
+  \list{\@biblabel{\@arabic\c@enumiv}}%
+       {\settowidth\labelwidth{\@biblabel{#1}}%
+        \leftmargin\labelwidth
+        \advance\leftmargin\labelsep
+        \usecounter{enumiv}%
+        \let\p@enumiv\@empty
+        \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+  \sloppy\clubpenalty4000\widowpenalty4000%
+  \sfcode`\.\@m}
+\makeatother
+
+% ================= 自動民國日期 =================
+
+\newcommand{\rocmonth}{%
+\ifnum\month<10 0\the\month\else\the\month\fi
+}
+
+\newcommand{\rocday}{%
+\ifnum\day<10 0\the\day\else\the\day\fi
+}
+
+\newcommand{\rocdate}{%
+\the\numexpr\year-1911\relax~年~
+\rocmonth~月~
+\rocday~日%
+}
+

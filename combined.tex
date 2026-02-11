@@ -1,0 +1,32 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{wrapper}
+\usepackage{pdfpages}
+
+\begin{document}
+
+\formcode{C802}
+\input{main}
+\clearpage
+
+\formcode{C803}
+\input{budget}
+\clearpage
+
+\formcode{C804}
+\input{advisor}
+\clearpage
+
+% ===== 匯入歷年成績單 =====
+
+% 直式 A4
+%\includepdf[pages=-]{transcript.pdf}
+
+% 橫式 A4
+\includepdf[pages=-,landscape=true]{transcript.pdf}
+
+\clearpage
+% ===== 匯入其他有利審查資料 =====
+% ex.競賽、論文、產學、工作證明...
+\includepdf[pages=-]{additional.pdf}
+
+\end{document}
