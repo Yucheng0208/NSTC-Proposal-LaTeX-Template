@@ -35,9 +35,10 @@ NSTC-Proposal-LaTeX-Template/
 ├──additional.pdf
 ├── transcript.pdf
 │ 
-└── README.md
+├── README.md
 │
 └── figures
+      │
       ├── img1.png
       └── img2.png
 ```
