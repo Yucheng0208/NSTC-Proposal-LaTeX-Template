@@ -1,6 +1,7 @@
 # NSTC-Proposal-LaTeX-Template
 
-A structured LaTeX template for the NSTC Undergraduate Research Project Proposal 國科會大專學生研究計畫 LaTeX 排版模板
+A structured LaTeX template for the NSTC Undergraduate Research Project Proposal 
+國科會大專學生研究計畫 LaTeX 提案模板
 
 ------------------------------------------------------------------------
 
@@ -16,7 +17,7 @@ The template is designed to:
 -   Produce submission-ready PDF output
 -   Compatible with Overleaf online editing
 
-本模板已完成完整模組化設計，可直接用於國科會大專學生研究計畫申請文件撰寫與編譯，並支援 Overleaf 線上編輯環境。
+本模板已完成完整模組化設計，可直接用於國科會大專學生研究計畫申請文件撰寫與編譯，並支援 [Overleaf](https://www.overleaf.com/) 線上編輯環境。
 
 ------------------------------------------------------------------------
 
@@ -65,7 +66,7 @@ NSTC-Proposal-LaTeX-Template/
 6.  Ensure `combined.tex` is selected as the main document.
 7.  Click **Recompile**.
 
-使用 Overleaf 時請務必將編譯器設定為**XeLaTeX**，以確保中文字型與版面正常顯示。
+使用 [Overleaf](https://www.overleaf.com/) 時請務必將編譯器設定為**XeLaTeX**，以確保中文字型與版面正常顯示。
 
 ------------------------------------------------------------------------
 
@@ -105,7 +106,7 @@ xelatex main.tex
 
 ## 📜 License
 
-This project is licensed under the MIT [License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 You are free to use, modify, and distribute this template, provided that the original license notice is retained.
 
