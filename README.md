@@ -60,10 +60,8 @@ NSTC-Proposal-LaTeX-Template/
 
 1.  Upload the entire repository to Overleaf.
 2.  Click **File → Settings**.
-3.  Set **Main document** to **combined.tex**.
-4.  Set **Compiler** to **XeLaTeX**.
-5.  Set **TeX Live version** to **2025**.
-6.  Ensure `main.tex` is selected as the main document.
+4.  Set **Compiler** to **XeLaTeX**, and *TeX Live version** to **2025**.
+6.  Ensure `combined.tex` is selected as the main document.
 7.  Click **Recompile**.
 
 使用 Overleaf 時請務必將編譯器設定為**XeLaTeX**，以確保中文字型與版面正常顯示。
