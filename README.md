@@ -22,6 +22,7 @@ The template is designed to:
 
 ## 📂 Repository Structure
 
+```
 NSTC-Proposal-LaTeX-Template/ 
 │
 ├── main.tex
@@ -39,6 +40,7 @@ NSTC-Proposal-LaTeX-Template/
 └── figures
       ├── img1.png
       └── img2.png
+```
 
 ------------------------------------------------------------------------
 
