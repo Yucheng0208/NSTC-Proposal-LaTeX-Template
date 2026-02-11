@@ -80,10 +80,12 @@ NSTC-Proposal-LaTeX-Template/
 
 #### Compile (XeLaTeX Recommended)
 
+```
 xelatex main.tex\
 bibtex main\
 xelatex main.tex\
 xelatex main.tex
+```
 
 ------------------------------------------------------------------------
 
